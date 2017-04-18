@@ -44,7 +44,7 @@ var svg = d3.select("#chart").append("svg")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
     svg.call(tip);
 
-d3.json("outPutFiles/ageWiseLiterateDistribution.json", function(error, data) {
+d3.json("output/ageWiseLiterateDistribution.json", function(error, data) {
   if (error) throw error;
   // alert(data);
   // alert("sadasd");

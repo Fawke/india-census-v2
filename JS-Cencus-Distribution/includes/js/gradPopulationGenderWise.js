@@ -35,7 +35,7 @@ var svg = d3.select("#chart").append("svg")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
     svg.call(tip);
 
-d3.json("outPutFiles/gradPopStateAndGradeWise.json", function(error, data) {
+d3.json("output/gradPopStateAndGradeWise.json", function(error, data) {
   if (error) throw error;
 
   color.domain(d3.keys(data[0]).filter(function(key) { return key !== "area"; }));

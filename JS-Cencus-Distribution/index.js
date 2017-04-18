@@ -30,8 +30,6 @@ function textToArrayHash(text) {
                 // ageWiseLiterateDistribution[ageKey].headerLine[12] += arrLine[12];
               }
               else {
-                console.log("Keys are "+ Object.keys(ageWiseLiterateDistribution));
-                console.log("key" + ageKey);
                 ageWiseLiterateDistribution[ageKey] = new Object();
                 ageWiseLiterateDistribution[ageKey].ageGroup = ageKey;
                 ageWiseLiterateDistribution[ageKey].TotalLiteratePop = arrLine[12];
@@ -87,7 +85,6 @@ function fileReader(fileNames) {
       // console.log("***Keys After File Read"+ Object.keys(ageWiseLiterateDistribution));
       var fs = require('fs');
       var data = fs.readFileSync(fileName).toString();
-      console.log("For File: "+fileName);
       textToArrayHash(data);
     });
     ageWiseLiterateDistribution = d3DataFormatter(ageWiseLiterateDistribution);
@@ -102,18 +99,15 @@ function fileReader(fileNames) {
 function dataDumper(){
     var fs = require('fs');
     // console.log(ageWiseLiterateDistribution);
-    fs.writeFile("outPutFiles/ageWiseLiterateDistribution.json",JSON.stringify(ageWiseLiterateDistribution),function(err) {
+    fs.writeFile("output/ageWiseLiterateDistribution.json",JSON.stringify(ageWiseLiterateDistribution),function(err) {
       if (err) throw err;
-      console.log('First file is saved!');
     });
 
-    fs.writeFile("outPutFiles/gradPopStateAndGradeWise.json", JSON.stringify(gradPopStateAndGradeWise), function(err) {
+    fs.writeFile("output/gradPopStateAndGradeWise.json", JSON.stringify(gradPopStateAndGradeWise), function(err) {
       if (err) throw err;
-      console.log('sec file is saved!');
     });
-    fs.writeFile("outPutFiles/eduCategWise.json",JSON.stringify(eduCategWise), function(err) {
+    fs.writeFile("output/eduCategWise.json",JSON.stringify(eduCategWise), function(err) {
       if (err) throw err;
-      console.log('third file is saved!');
     });
 }
 

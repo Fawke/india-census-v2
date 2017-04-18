@@ -1,0 +1,15 @@
+{
+  "name": "india-census-v2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "d3DataGen.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^3.5.0"
+  }
+}
